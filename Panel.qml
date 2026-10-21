@@ -11,8 +11,8 @@ import qs.Ui
 
 Panel {
   id: root
-  moduleName: "io.github.coryblische.paperclip"
-  ipcTarget: "io.github.coryblische.paperclip"
+  moduleName: "io.github.lutzlstein.paperclip"
+  ipcTarget: "io.github.lutzlstein.paperclip"
   manageIpc: false
 
   readonly property string apiUrl: String(setting("apiUrl", "http://localhost:3100")).replace(/\/+$/, "")
@@ -73,7 +73,7 @@ Panel {
     var script = 'if command -v bat >/dev/null; then ' +
       'journalctl --user -f -n 200 -o cat -u "$1" | bat --paging=never --style=plain --color=always --theme=ansi -l log; ' +
       'else journalctl --user -f -n 200 -u "$1"; fi'
-    Quickshell.execDetached(["omarchy-launch-tui", "--app-id=io.github.coryblische.paperclip.logs",
+    Quickshell.execDetached(["omarchy-launch-tui", "--app-id=io.github.lutzlstein.paperclip.logs",
       "bash", "-c", script, "paperclip-logs", serviceUnit])
     close()
   }

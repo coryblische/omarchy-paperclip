@@ -30,16 +30,16 @@ The plugin does not install, configure or update PaperclipAI itself.
 ## Install
 
 ```bash
-omarchy plugin add https://github.com/coryblische/omarchy-paperclip --enable
+omarchy plugin add https://github.com/lutzlstein/omarchy-paperclip --enable
 ```
 
 The widget goes in the center section of the bar. Move it with
-`omarchy bar move io.github.coryblische.paperclip --section right`.
+`omarchy bar move io.github.lutzlstein.paperclip --section right`.
 
 ## Uninstall
 
 ```bash
-omarchy plugin remove io.github.coryblische.paperclip
+omarchy plugin remove io.github.lutzlstein.paperclip
 ```
 
 This removes the plugin folder and its bar entry. PaperclipAI and its service
@@ -60,7 +60,7 @@ are not changed.
 Open the panel from a keybinding or script with:
 
 ```bash
-omarchy-shell io.github.coryblische.paperclip toggle
+omarchy-shell io.github.lutzlstein.paperclip toggle
 ```
 
 The IPC target also has `open`, `close`, `toggleService` and `status`.
@@ -72,7 +72,7 @@ reloads the file on save.
 
 ```json
 {
-  "id": "io.github.coryblische.paperclip",
+  "id": "io.github.lutzlstein.paperclip",
   "apiUrl": "http://localhost:3100",
   "serviceUnit": "paperclipai.service"
 }
