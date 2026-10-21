@@ -8,7 +8,7 @@ and shows live health details.
 This is an unofficial community plugin. It is not affiliated with the
 PaperclipAI project.
 
-<img src="preview.png" alt="The Paperclip AI panel open under the Omarchy bar" width="720">
+<img src="preview.png" alt="The Paperclip AI panel open under the Omarchy bar" width="412">
 
 - The bar icon uses your theme's accent color while the service runs and the
   muted color when it is stopped. It follows `omarchy theme set`.
