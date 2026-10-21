@@ -51,7 +51,7 @@ are not changed.
 |--------|-------|-----------------------|
 | Open or close the panel | Left-click the bar icon | Esc closes |
 | Start or stop the service | Right-click the bar icon, or the header switch | S |
-| View logs (`journalctl -f`) | Middle-click the bar icon | V |
+| View colored logs (`journalctl -f`) | Middle-click the bar icon | V |
 | Open the web UI | | O |
 | Refresh status | | R |
 | Move between controls | Hover | Up/Down or j/k |
@@ -89,7 +89,11 @@ reloads the file on save.
 - Start and stop run `systemctl --user start|stop <serviceUnit>`.
 - While the panel is open and the service runs, it requests
   `<apiUrl>/api/health` with `curl` every 10 seconds.
-- Logs open in a terminal through `omarchy-launch-tui journalctl --user -f -u <serviceUnit>`.
+- Logs open in a terminal through `omarchy-launch-tui`, following
+  `journalctl --user -f -o cat -u <serviceUnit>`. When `bat` is installed (Omarchy
+  ships it), lines pass through `bat -l log --theme=ansi`, so log levels,
+  timestamps, routes, status codes and JSON are colored with your terminal's
+  theme palette. Without `bat` the plain journal is shown.
 
 The plugin has no other side effects. It does not use `sudo` and does not
 write files.

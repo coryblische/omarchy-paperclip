@@ -68,7 +68,13 @@ Panel {
   }
 
   function openLogs() {
-    Quickshell.execDetached(["omarchy-launch-tui", "journalctl", "--user", "-f", "-u", serviceUnit])
+    // bat's ansi theme maps log syntax onto the terminal palette, so colors
+    // follow the Omarchy theme. Plain journalctl if bat is missing.
+    var script = 'if command -v bat >/dev/null; then ' +
+      'journalctl --user -f -n 200 -o cat -u "$1" | bat --paging=never --style=plain --color=always --theme=ansi -l log; ' +
+      'else journalctl --user -f -n 200 -u "$1"; fi'
+    Quickshell.execDetached(["omarchy-launch-tui", "--app-id=io.github.coryblische.paperclip.logs",
+      "bash", "-c", script, "paperclip-logs", serviceUnit])
     close()
   }
 
