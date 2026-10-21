@@ -95,8 +95,8 @@ reloads the file on save.
   timestamps, routes, status codes and JSON are colored with your terminal's
   theme palette. Without `bat` the plain journal is shown.
 
-The plugin has no other side effects. It does not use `sudo` and does not
-write files.
+The plugin has no other side effects. Everything runs as your own user, and
+it does not write files.
 
 ## License
 
